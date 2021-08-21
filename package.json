@@ -1,0 +1,16 @@
+{
+  "name": "sahchan-bot",
+  "version": "1.0.0",
+  "description": "some bot just build no worry",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ."
+  },
+  "author": "flower-oralita",
+  "dependencies": {
+    "@discordjs/builders": "^0.5.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0"
+  }
+}
