@@ -1,18 +1,28 @@
-const fs = require('fs');
-const { token } = require('./util/config.json');
 const { Client, Intents } = require('discord.js');
+const { token } = require('./util/config.json');
+const init = require('./services/deploy-command');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-const eventFile = fs.readdirSync('./Event').filter(file => file.endsWith('.js'));
+client.once('ready', () => {
+    init.bot();
+	console.log('Ready!');
+});
 
-for(const file of eventFile) {
-    const event = require(`./Event/${file}`);
-    if(event.once){
-        client.once(event.name, (...args) => event.execute(... args, client));
-    }else{
-        client.on(event.name, (...args) => event.execute(... args, client));
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const { commandName } = interaction;
+
+	if (commandName === 'ping') {
+		await interaction.reply('Pong!');
+	} else if (commandName === 'server') {
+		await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
+	} else if (commandName === 'user') {
+		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
+	} else if (commandName === 'how_i_am_i_look_like') {
+        await interaction.reply(`${interaction.user.tag} is na ta dee`);
     }
-}
+});
 
 client.login(token);
