@@ -1,6 +1,8 @@
 # Try Discord BOT
 
-```npm install```
+Build a bot : ```npm install```
+
+Wake a bot up : ``` npm run dev ```
 
 make config.json yourself
 
