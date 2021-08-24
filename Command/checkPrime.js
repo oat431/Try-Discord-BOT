@@ -1,21 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders')
-function checkPrime(number){
-    if(number <= 1){
-        return false;
-    }
-
-    if(number === 2){
-        return true;
-    }
-
-    for(let i=2 ;i < number ;i ++){
-        if(number % i === 0){
-            return false
-        }
-    }
-
-    return true;
-}
+const { checkPrime } = require('../services/CheckPrime')
 
 module.exports = {
     data: new SlashCommandBuilder()
