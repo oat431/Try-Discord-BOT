@@ -1,13 +1,17 @@
-# Try Discord BOT
+# Try Discord BOT 🤖
 
-Build a bot : ```npm install```
+Install a discord bot dependencies : ```npm install```
 
-Wake a bot up : ``` npm run dev ```
+Wake discord bot up : ``` npm run dev ```
 
-make config.json yourself
+make config.json yourself on util/config.json
 
-config.json
+```
+util/config.json
 
 {
     token: 'your-token-here'
 }
+```
+
+more on [dicord developer](https://discord.com/developers/applications)
