@@ -15,3 +15,13 @@ util/config.json
 ```
 
 more on [dicord developer](https://discord.com/developers/applications)
+
+---
+
+#### Todo next
+
+- make attd check
+
+- make submition queueing
+
+- CI/CD
